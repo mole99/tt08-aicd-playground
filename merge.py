@@ -125,7 +125,13 @@ draw_stripe(24.34, 6.24, 'VGND')
 # Draw met4 stripe for VAPWR
 draw_stripe(315, 6.24, 'VAPWR')
 
-# Convert PCells to static
+# Draw metal for analog pins
+for i in range(8):
+    box = db.DBox(0.0, 0.0, 0.9, 1.0).moved(0.93 + 19.32*i, 0)
+    layer_met4_drawing = ly.layer(db.LayerInfo(71, 20))
+    top.shapes(layer_met4_drawing).insert(box)
+
+# Convert PCells to static # TODO
 ctx = db.SaveLayoutOptions()
 ctx.write_context_info = False
 
