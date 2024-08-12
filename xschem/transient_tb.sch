@@ -145,7 +145,7 @@ C {devices/lab_wire.sym} 600 360 0 1 {name=p14 sig_type=std_logic lab=uo_out[7:0
 C {devices/lab_wire.sym} 600 380 0 1 {name=p15 sig_type=std_logic lab=uio_out[7:0]}
 C {devices/lab_wire.sym} 600 400 0 1 {name=p16 sig_type=std_logic lab=uio_oe[7:0]}
 C {devices/lab_wire.sym} 600 420 0 1 {name=p17 sig_type=std_logic lab=ua[7:0]}
-C {noconn.sym} 600 360 0 1 {name=l1}
-C {noconn.sym} 600 380 0 1 {name=l2}
-C {noconn.sym} 600 400 0 1 {name=l3}
-C {noconn.sym} 600 420 0 1 {name=l5}
+C {devices/noconn.sym} 600 360 0 1 {name=l1}
+C {devices/noconn.sym} 600 380 0 1 {name=l2}
+C {devices/noconn.sym} 600 400 0 1 {name=l3}
+C {devices/noconn.sym} 600 420 0 1 {name=l5}

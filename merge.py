@@ -58,6 +58,7 @@ top.insert(db.DCellInstArray(rdac_top.cell_index(),
 ly_tmp = db.Layout()
 ly_tmp.read("dependencies/sky130_leo_ip__levelshifter/gds/sky130_leo_ip__levelshifter_up.gds")
 lvlshifter_up = ly_tmp.cell('sky130_leo_ip__levelshifter_up')
+lvlshifter_up.flatten(-1, True) # TODO flatten or else: (hvdifftap.21)
 lvlshifter_up = copy_cell_to_layout(ly, lvlshifter_up)
 
 # Insert levelshifter up
@@ -89,6 +90,17 @@ sky130_fd_sc_hvl__buf_4 = copy_cell_to_layout(ly, sky130_fd_sc_hvl__buf_4)
 for i in range(8):
     top.insert(db.DCellInstArray(sky130_fd_sc_hvl__buf_4.cell_index(),
                                       db.DTrans(db.DTrans.R0, db.DPoint(200, 218 - 1.665 + 0.25 - i*(8-1.27)))))
+    
+    # Connect VPWR with tap
+    box = db.DBox(0.0, 0.0, 4.8, 0.74).moved(200, 218 - 1.665 + 0.25 - i*(8-1.27) - 0.115 + 3.56)
+    layer_met1_drawing = ly.layer(db.LayerInfo(68, 20))
+    top.shapes(layer_met1_drawing).insert(box)
+
+    
+    # Connect VGND with tap
+    box = db.DBox(0.0, 0.0, 4.8, 0.74).moved(200, 218 - 1.665 + 0.25 - i*(8-1.27) - 0.115)
+    layer_met1_drawing = ly.layer(db.LayerInfo(68, 20))
+    top.shapes(layer_met1_drawing).insert(box)
 
 # Comparator
 ly_tmp = db.Layout()
