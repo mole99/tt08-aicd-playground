@@ -35,7 +35,7 @@ dig_ctrl_top.clear(layer_met3_pin)"""
 
 # Insert the digital top
 top.insert(db.DCellInstArray(dig_ctrl_top.cell_index(),
-                                  db.DTrans(db.DTrans.R0, db.DPoint(0, 8.76))))
+                                  db.DTrans(db.DTrans.R0, db.DPoint(0, 8.76-5))))
 
 # --- Analog IPs ---
 
