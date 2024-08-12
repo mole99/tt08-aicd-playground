@@ -1,0 +1,190 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name:           tt08-aicd-playground
+description:    Test design for the AICD course at Graz University of Technology
+PDK:            sky130A
+
+cace_format:    5.0
+
+authorship:
+  designer:         Leo Moser
+  company:          Graz University of Technology
+  creation_date:    July 4, 2024
+  license:          Apache 2.0
+
+paths:
+  root:             ..
+  schematic:        xschem
+  layout:           gds
+  verilog:          verilog
+  netlist:          netlist
+  documentation:    doc
+
+pins:
+    VDPWR:
+        description: Digital 1.8V power supply
+        type: power
+        direction: inout
+    VAPWR:
+        description: Analog 3.3V power supply
+        type: power
+        direction: inout
+    VGND:
+        description: Ground
+        type: ground
+        direction: inout
+    clk:
+        description: TODO
+        type: signal
+        direction: input
+    ena:
+        description: TODO
+        type: signal
+        direction: input
+    rst_n:
+        description: TODO
+        type: signal
+        direction: input
+    port_i[7:0]:
+        description: TODO
+        type: signal
+        direction: input
+    port_o[7:0]:
+        description: TODO
+        type: signal
+        direction: output
+    ui_in[7:0]:
+        description: TODO
+        type: signal
+        direction: input
+    uio_in[7:0]:
+        description: TODO
+        type: signal
+        direction: input
+    uio_oe[7:0]:
+        description: TODO
+        type: signal
+        direction: output
+    uio_out[7:0]:
+        description: TODO
+        type: signal
+        direction: output
+    uo_out[7:0]:
+        description: TODO
+        type: signal
+        direction: output
+    ua[7:0]:
+        description: TODO
+        type: signal
+        direction: inout
+
+default_conditions:
+  avdd:
+    description: Analog power supply voltage
+    display: Vdd
+    unit: V
+    typical: 3.3
+  dvdd:
+    description: Digital power supply voltage
+    display: Vdd
+    unit: V
+    typical: 1.8
+  corner:
+    description: Process corner
+    display: Corner
+    typical: tt
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °C
+    typical: 27
+
+parameters:
+  #transient:
+  #  status: skip
+  #  description: Transient simulation
+  #  display: Transient
+  #  unit: V/V
+  #  tool:
+  #    ngspice:
+  #      template: transient_tb.sch
+
+  area:
+    description: Total circuit layout area
+    display: Area
+    unit: µm²
+    spec:
+      maximum:
+        value: any
+    tool:
+      magic_area
+
+  width:
+    description: Total circuit layout width
+    display: Width
+    unit: µm
+    spec:
+      maximum:
+        value: any
+    tool:
+      magic_width
+
+  height:
+    description: Total circuit layout height
+    display: Height
+    unit: µm
+    spec:
+      maximum:
+        value: any
+    tool:
+      magic_height
+
+  magic_drc:
+    description: Magic DRC
+    display: Magic DRC
+    spec:
+      maximum:
+        value: 0
+    tool:
+      magic_drc
+
+  netgen_lvs:
+    description: Netgen LVS
+    display: Netgen LVS
+    spec:
+      maximum:
+        value: 0
+    tool:
+      netgen_lvs
+
+  klayout_drc_feol:
+    description: KLayout DRC feol
+    display: KLayout DRC feol
+    spec:
+      maximum:
+        value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true']
+
+  klayout_drc_beol:
+    description: KLayout DRC beol
+    display: KLayout DRC beol
+    spec:
+      maximum:
+        value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'beol=true']
+
+  klayout_drc_full:
+    description: KLayout DRC full
+    display: KLayout DRC full
+    spec:
+      maximum:
+        value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true', '-rd', 'beol=true', '-rd', 'offgrid=true']

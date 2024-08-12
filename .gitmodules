@@ -1,0 +1,12 @@
+[submodule "dependencies/dig_ctrl"]
+	path = dependencies/dig_ctrl
+	url = https://github.com/mole99/dig_ctrl.git
+[submodule "dependencies/sky130_leo_ip__rdac_8bit"]
+	path = dependencies/sky130_leo_ip__rdac_8bit
+	url = https://github.com/mole99/sky130_leo_ip__rdac_8bit.git
+[submodule "dependencies/sky130_leo_ip__comparator"]
+	path = dependencies/sky130_leo_ip__comparator
+	url = git@github.com:mole99/sky130_leo_ip__comparator.git
+[submodule "dependencies/sky130_leo_ip__levelshifter"]
+	path = dependencies/sky130_leo_ip__levelshifter
+	url = https://github.com/mole99/sky130_leo_ip__levelshifter.git

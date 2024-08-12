@@ -1,35 +1,34 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
+# AICD Playground
 
-- [Read the documentation for project](docs/info.md)
+A mixed-signal test project for the analog IC design course at Graz University of Technology.
 
-## What is Tiny Tapeout?
+> [!WARNING]  
+> 🚧 This repository is WIP. 🚧
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+This repository is the top-level and integrates a digital 8-bit controller with some analog IPs such as up/down-levelshifters, an R2R-DAC and a comparator. The IPs are connected in a way that a simple SAR-ADC is formed.
 
-To learn more and get started, visit https://tinytapeout.com.
+The dependencies are hosted in their own repositories and are linked as submodules under `dependencies/`.
 
-## Analog projects
+## Clone the Repository
 
-For specifications and instructions, see the [analog specs page](https://tinytapeout.com/specs/analog/).
+Make sure to also clone the submodules:
 
-## Enable GitHub actions to build the results page
+	git clone https://github.com/mole99/tt08-aicd-playground.git --recurse-submodules
 
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
+If you forgot to clone with submodules, you can run the following instead:
 
-## Resources
+	git submodule update --init --recursive
 
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
+## Assemble the Top-Level
 
-## What next?
+The script `merge.py` uses the KLayout Python API to place all IPs inside the template.
 
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@matthewvenn](https://twitter.com/matthewvenn)
+## Run Characterization
+
+[CACE](https://github.com/efabless/cace) is used on the top-level and the analog IPs to run DRC and LVS checks. For some IPs simulations are run under different conditions such as corners and temperature.
+
+To run CACE, simply run:
+
+	cace
