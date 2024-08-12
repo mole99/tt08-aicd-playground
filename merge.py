@@ -1,5 +1,6 @@
 import klayout.db as db
 import os
+import subprocess
 
 # Must start with "tt_um_"
 top_module = "tt_um_tt08_aicd_playground"
@@ -139,6 +140,38 @@ if not os.path.exists('lef/'):
 
 ly.write(f"gds/{top_module}.gds", ctx)
 
-# Create empty lef file
-with open(f"lef/{top_module}.lef", 'w') as fp:
-    pass
+
+# Generate the LEF file using magic
+
+PDK_ROOT = os.getenv('PDK_ROOT', '~/.volare')
+PDK = os.getenv('PDK', 'sky130A')
+
+os.environ['PDK_ROOT'] = PDK_ROOT
+os.environ['PDK'] = PDK
+
+gds_in = f'gds/{top_module}.gds'
+lef_out = f'lef/{top_module}.lef'
+
+rcfile = os.path.join(PDK_ROOT, PDK, 'libs.tech', 'magic', f'{PDK}.magicrc')
+
+magic_input = ''
+magic_input += f'gds read {gds_in}\n'
+magic_input += f'load {top_module}\n'
+magic_input += f'lef write {lef_out} -hide -pinonly\n'
+
+with subprocess.Popen(
+    ['magic'] + ['-dnull', '-noconsole', '-rcfile', rcfile],
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    stdin=subprocess.PIPE,
+    text=True,
+) as process:
+
+    stdout, stderr = process.communicate(magic_input)
+    returncode = process.returncode
+
+    if returncode != 0:
+        print(f'Subprocess exited with error code {returncode}')
+
+    print(stdout)
+    print(stderr)
