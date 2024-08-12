@@ -15,7 +15,7 @@ project:
   uses_3v3: true       # Set to true if your project uses 3.3V (VAPWR) in addition to 1.8V (VDPWR)
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt08-aicd-playground"
+  top_module:  "tt_um_tt08_aicd_playground"
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        

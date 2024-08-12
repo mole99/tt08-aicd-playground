@@ -1,6 +1,9 @@
 import klayout.db as db
 import os
 
+# Must start with "tt_um_"
+top_module = "tt_um_tt08_aicd_playground"
+
 ly = db.Layout()
 
 # Read the template
@@ -8,7 +11,7 @@ lmap = ly.read("template/tt_analog_2x2_3v3.gds")
 
 # Get the top cell and change the name
 top = ly.top_cell()
-top.name = "tt08-aicd-playground"
+top.name = top_module
 
 # Get the digital top
 ly.read("dependencies/dig_ctrl/gds/dig_ctrl_top.gds")
@@ -128,8 +131,14 @@ ctx.write_context_info = False
 # Flatten top cell one level
 #ly.top_cell().flatten(1, True)
 
-# Create directory
+# Create directories
 if not os.path.exists('gds/'):
     os.makedirs('gds/')
+if not os.path.exists('lef/'):
+    os.makedirs('lef/')
 
-ly.write("gds/tt08-aicd-playground.gds", ctx)
+ly.write(f"gds/{top_module}.gds", ctx)
+
+# Create empty lef file
+with open(f"lef/{top_module}.lef", 'w') as fp:
+    pass
