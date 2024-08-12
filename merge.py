@@ -104,7 +104,7 @@ top.insert(db.DCellInstArray(comparator.cell_index(),
 
 def draw_stripe(x, y, label):
     width = 1.6
-    height = 199.04
+    height = 212.64
 
     layer_met4_drawing = ly.layer(db.LayerInfo(71, 20))
     layer_met4_pin     = ly.layer(db.LayerInfo(71, 16))
@@ -119,11 +119,11 @@ def draw_stripe(x, y, label):
 
 # Draw met4 stripes for VDPWR and VGND
 # at the exact same position as in the digital macro
-draw_stripe(21.04, 13.96, 'VDPWR')
-draw_stripe(24.34, 13.96, 'VGND')
+draw_stripe(21.04, 6.24, 'VDPWR')
+draw_stripe(24.34, 6.24, 'VGND')
 
 # Draw met4 stripe for VAPWR
-draw_stripe(315, 13.96, 'VAPWR')
+draw_stripe(315, 6.24, 'VAPWR')
 
 # Convert PCells to static
 ctx = db.SaveLayoutOptions()
