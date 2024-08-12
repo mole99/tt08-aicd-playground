@@ -157,6 +157,7 @@ rcfile = os.path.join(PDK_ROOT, PDK, 'libs.tech', 'magic', f'{PDK}.magicrc')
 magic_input = ''
 magic_input += f'gds read {gds_in}\n'
 magic_input += f'load {top_module}\n'
+magic_input += f'property FIXED_BBOX "0 0 {319240//5} {225760//5}"\n'
 magic_input += f'lef write {lef_out} -hide -pinonly\n'
 
 with subprocess.Popen(
