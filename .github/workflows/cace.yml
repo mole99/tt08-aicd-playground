@@ -1,4 +1,4 @@
-name: CI
+name: cace
 
 # Events that trigger workflow
 on:
@@ -22,7 +22,7 @@ jobs:
         with:
           pdk_family: 'sky130'
           cace_root: '.'
-          cace_datasheet: 'cace/sky130_leo_ip__rdac_8bit.yaml'
+          cace_datasheet: 'cace/tt08-aicd-playground.yaml'
           cace_source: 'layout'
           token: ${{ secrets.GITHUB_TOKEN }}
       # Upload artifacts
