@@ -81,15 +81,15 @@ N 290 170 370 170 {
 lab=GND}
 N 370 50 370 90 {
 lab=rst_n}
-C {tt08-aicd-playground.sym} 450 360 0 0 {name=x1}
+C {tt_um_tt08_aicd_playground.sym} 450 360 0 0 {name=x1}
 C {devices/vsource.sym} 50 120 0 0 {name=V0 value=0 savecurrent=false}
 C {devices/gnd.sym} 50 190 0 0 {name=l4 lab=GND}
-C {devices/vsource.sym} 130 120 0 0 {name=V2 value=\{avdd\} savecurrent=false}
+C {devices/vsource.sym} 130 120 0 0 {name=V2 value=CACE\{avdd\} savecurrent=false}
 C {devices/lab_wire.sym} 50 50 0 0 {name=p3 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 130 50 0 0 {name=p5 sig_type=std_logic lab=avdd}
-C {devices/vsource.sym} 210 120 0 0 {name=V1 value=\{dvdd\} savecurrent=false}
+C {devices/vsource.sym} 210 120 0 0 {name=V1 value=CACE\{dvdd\} savecurrent=false}
 C {devices/lab_wire.sym} 210 50 0 0 {name=p11 sig_type=std_logic lab=dvdd}
-C {sky130_fd_pr/corner.sym} 380 520 0 0 {name=CORNER only_toplevel=false corner=\{corner\}}
+C {sky130_fd_pr/corner.sym} 380 520 0 0 {name=CORNER only_toplevel=false corner=CACE\{corner\}}
 C {devices/launcher.sym} 360 680 0 0 {name=h5
 descr="Load transient data" 
 tclcommand="xschem raw_read $netlist_dir/comp1_tb1.raw tran"
@@ -101,9 +101,9 @@ C {devices/simulator_commands_shown.sym} 720 70 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
-.include \{DUT_path\}
+.include CACE\{DUT_path\}
 
-.temp \{temperature\}
+.temp CACE\{temperature\}
 
 .control
     * transient simulation
@@ -112,9 +112,9 @@ value="
 
     *save all
     save clk
-    write \{simpath\}/\{filename\}_\{N\}.raw
+    write CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.raw
 
-    echo 1 > \{simpath\}/\{filename\}_\{N\}.data
+    echo 1 > CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data
 .endc
 "}
 C {devices/vsource.sym} 290 120 0 0 {name=V3 value="pulse 0 1.8 0 1p 1p 10n 20n" savecurrent=false}
@@ -124,7 +124,7 @@ C {devices/lab_wire.sym} 600 320 0 1 {name=p4 sig_type=std_logic lab=dvdd}
 C {devices/lab_wire.sym} 600 340 0 1 {name=p6 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 300 360 0 0 {name=p7 sig_type=std_logic lab=clk}
 C {devices/lab_wire.sym} 300 340 0 0 {name=p8 sig_type=std_logic lab=dvdd}
-C {devices/vsource.sym} 370 120 0 0 {name=V4 value="pwl 0 \{dvdd\} 5p \{dvdd\} 5.1p 0" savecurrent=false}
+C {devices/vsource.sym} 370 120 0 0 {name=V4 value="pwl 0 CACE\{dvdd\} 5p CACE\{dvdd\} 5.1p 0" savecurrent=false}
 C {devices/lab_wire.sym} 370 50 0 0 {name=p9 sig_type=std_logic lab=rst_n}
 C {devices/lab_wire.sym} 300 300 0 0 {name=p10 sig_type=std_logic lab="8*vss"}
 C {devices/lab_wire.sym} 300 320 0 0 {name=p12 sig_type=std_logic lab="8*vss"}

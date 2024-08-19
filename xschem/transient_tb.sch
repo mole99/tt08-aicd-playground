@@ -85,7 +85,7 @@ N 290 170 370 170 {
 lab=GND}
 N 370 50 370 90 {
 lab=rst_n}
-C {tt08-aicd-playground.sym} 450 360 0 0 {name=x1}
+C {tt_um_tt08_aicd_playground.sym} 450 360 0 0 {name=x1}
 C {devices/vsource.sym} 50 120 0 0 {name=V0 value=0 savecurrent=false}
 C {devices/gnd.sym} 50 190 0 0 {name=l4 lab=GND}
 C {devices/vsource.sym} 130 120 0 0 {name=V2 value=3.3 savecurrent=false}
@@ -102,7 +102,6 @@ C {devices/simulator_commands_shown.sym} 720 70 0 0 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
-.include /home/leo/Nextcloud/ASIC/Sky130/tt08-aicd-playground/netlist/schematic/tt08-aicd-playground.spice
 
 .temp 27
 
