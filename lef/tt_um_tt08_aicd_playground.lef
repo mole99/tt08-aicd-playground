@@ -7,8 +7,54 @@ MACRO tt_um_tt08_aicd_playground
   FOREIGN tt_um_tt08_aicd_playground ;
   ORIGIN 0.000 0.000 ;
   SIZE 319.240 BY 225.760 ;
+  PIN VDPWR
+    ANTENNADIFFAREA 6.800000 ;
+    PORT
+      LAYER met4 ;
+        RECT 181.200 6.240 182.800 221.625 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 197.400 6.240 199.000 218.880 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 21.040 6.240 22.640 218.880 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 141.040 6.240 142.640 218.880 ;
+    END
+  END VDPWR
+  PIN VGND
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 184.000 6.240 185.600 221.625 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 200.200 6.240 201.800 218.880 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 24.340 6.240 25.940 218.880 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 144.340 6.240 145.940 218.880 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 312.200 6.240 313.800 218.880 ;
+    END
+  END VGND
   PIN VAPWR
-    ANTENNADIFFAREA 16.667999 ;
+    ANTENNADIFFAREA 4.016000 ;
+    PORT
+      LAYER met4 ;
+        RECT 190.000 6.240 191.600 221.625 ;
+    END
     PORT
       LAYER met4 ;
         RECT 203.000 6.240 204.600 218.880 ;
@@ -18,28 +64,6 @@ MACRO tt_um_tt08_aicd_playground
         RECT 315.000 6.240 316.600 218.880 ;
     END
   END VAPWR
-  PIN VGND
-    USE GROUND ;
-    PORT
-      LAYER met4 ;
-        RECT 200.200 6.240 201.800 218.880 ;
-    END
-    PORT
-      LAYER met4 ;
-        RECT 24.340 6.240 25.940 218.880 ;
-    END
-  END VGND
-  PIN VDPWR
-    ANTENNADIFFAREA 4.448400 ;
-    PORT
-      LAYER met4 ;
-        RECT 197.400 6.240 199.000 218.880 ;
-    END
-    PORT
-      LAYER met4 ;
-        RECT 21.040 6.240 22.640 218.880 ;
-    END
-  END VDPWR
   PIN clk
     ANTENNAGATEAREA 0.852000 ;
     PORT
@@ -61,12 +85,15 @@ MACRO tt_um_tt08_aicd_playground
     END
   END rst_n
   PIN ua[0]
+    ANTENNAGATEAREA 0.710000 ;
+    ANTENNADIFFAREA 1.260000 ;
     PORT
       LAYER met4 ;
         RECT 136.170 0.000 137.070 1.000 ;
     END
   END ua[0]
   PIN ua[1]
+    ANTENNAGATEAREA 10.000000 ;
     PORT
       LAYER met4 ;
         RECT 116.850 0.000 117.750 1.000 ;
@@ -116,42 +143,49 @@ MACRO tt_um_tt08_aicd_playground
     END
   END ui_in[0]
   PIN ui_in[1]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 119.910 224.760 120.210 225.760 ;
     END
   END ui_in[1]
   PIN ui_in[2]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 117.150 224.760 117.450 225.760 ;
     END
   END ui_in[2]
   PIN ui_in[3]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 114.390 224.760 114.690 225.760 ;
     END
   END ui_in[3]
   PIN ui_in[4]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 111.630 224.760 111.930 225.760 ;
     END
   END ui_in[4]
   PIN ui_in[5]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 108.870 224.760 109.170 225.760 ;
     END
   END ui_in[5]
   PIN ui_in[6]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 106.110 224.760 106.410 225.760 ;
     END
   END ui_in[6]
   PIN ui_in[7]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 103.350 224.760 103.650 225.760 ;
@@ -165,6 +199,7 @@ MACRO tt_um_tt08_aicd_playground
     END
   END uio_in[0]
   PIN uio_in[1]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 97.830 224.760 98.130 225.760 ;
@@ -184,6 +219,7 @@ MACRO tt_um_tt08_aicd_playground
     END
   END uio_in[3]
   PIN uio_in[4]
+    ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met4 ;
         RECT 89.550 224.760 89.850 225.760 ;
@@ -377,13 +413,13 @@ MACRO tt_um_tt08_aicd_playground
   END uo_out[7]
   OBS
       LAYER li1 ;
-        RECT 5.520 6.395 299.875 222.085 ;
+        RECT 5.520 6.395 313.800 222.085 ;
       LAYER met1 ;
-        RECT 2.370 6.240 300.565 222.085 ;
+        RECT 1.910 5.840 313.800 223.020 ;
       LAYER met2 ;
-        RECT 2.390 6.295 300.565 221.625 ;
+        RECT 1.930 0.715 313.800 223.050 ;
       LAYER met3 ;
-        RECT 2.365 6.315 300.565 221.625 ;
+        RECT 1.905 0.715 317.025 221.625 ;
       LAYER met4 ;
         RECT 3.055 224.360 14.630 224.760 ;
         RECT 15.730 224.360 17.390 224.760 ;
@@ -428,14 +464,32 @@ MACRO tt_um_tt08_aicd_playground
         RECT 123.370 224.360 125.030 224.760 ;
         RECT 126.130 224.360 127.790 224.760 ;
         RECT 128.890 224.360 130.550 224.760 ;
-        RECT 131.650 224.360 304.500 224.760 ;
-        RECT 3.055 219.280 304.500 224.360 ;
-        RECT 3.055 12.800 20.640 219.280 ;
-        RECT 23.040 12.800 23.940 219.280 ;
-        RECT 26.340 12.800 197.000 219.280 ;
-        RECT 199.400 12.800 199.800 219.280 ;
-        RECT 202.200 12.800 202.600 219.280 ;
-        RECT 205.000 12.800 304.500 219.280 ;
+        RECT 131.650 224.360 317.025 224.760 ;
+        RECT 3.055 222.025 317.025 224.360 ;
+        RECT 3.055 219.280 180.800 222.025 ;
+        RECT 3.055 5.840 20.640 219.280 ;
+        RECT 23.040 5.840 23.940 219.280 ;
+        RECT 26.340 5.840 140.640 219.280 ;
+        RECT 143.040 5.840 143.940 219.280 ;
+        RECT 146.340 5.840 180.800 219.280 ;
+        RECT 183.200 5.840 183.600 222.025 ;
+        RECT 186.000 5.840 189.600 222.025 ;
+        RECT 192.000 219.280 317.025 222.025 ;
+        RECT 192.000 5.840 197.000 219.280 ;
+        RECT 199.400 5.840 199.800 219.280 ;
+        RECT 202.200 5.840 202.600 219.280 ;
+        RECT 205.000 5.840 311.800 219.280 ;
+        RECT 314.200 5.840 314.600 219.280 ;
+        RECT 317.000 5.840 317.025 219.280 ;
+        RECT 3.055 1.400 317.025 5.840 ;
+        RECT 3.055 0.715 19.850 1.400 ;
+        RECT 21.550 0.715 39.170 1.400 ;
+        RECT 40.870 0.715 58.490 1.400 ;
+        RECT 60.190 0.715 77.810 1.400 ;
+        RECT 79.510 0.715 97.130 1.400 ;
+        RECT 98.830 0.715 116.450 1.400 ;
+        RECT 118.150 0.715 135.770 1.400 ;
+        RECT 137.470 0.715 317.025 1.400 ;
   END
 END tt_um_tt08_aicd_playground
 END LIBRARY

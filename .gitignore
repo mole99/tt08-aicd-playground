@@ -3,6 +3,7 @@
 .vscode
 *.vcd
 runs
+cace_extfiles
 tt_submission
 src/user_config.tcl
 test/sim_build
