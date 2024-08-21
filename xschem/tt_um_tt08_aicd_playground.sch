@@ -11,26 +11,24 @@ N 800 220 800 320 {
 lab=port_ms_o[7:0]}
 N 800 220 920 220 {
 lab=port_ms_o[7:0]}
-N 1580 390 1780 390 {
-lab=ua[1]}
 N 1740 190 1780 190 {
 lab=ua[1]}
 N 1780 190 1780 390 {
 lab=ua[1]}
 N 1180 410 1420 410 {
-lab=ua[0]}
+lab=#net1}
 N 1120 420 1180 420 {
-lab=ua[0]}
+lab=#net1}
 N 1180 410 1180 420 {
-lab=ua[0]}
+lab=#net1}
 N 590 340 720 340 {
-lab=#net1}
+lab=#net2}
 N 720 340 720 650 {
-lab=#net1}
+lab=#net2}
 N 720 650 1480 650 {
-lab=#net1}
+lab=#net2}
 N 1480 490 1480 650 {
-lab=#net1}
+lab=#net2}
 N 1120 220 1210 220 {
 lab=port_ms_o_ana[7:0]}
 N 1290 220 1340 220 {
@@ -65,6 +63,10 @@ N 260 420 920 420 {
 lab=port_ms_i}
 N 260 400 260 420 {
 lab=port_ms_i}
+N 1780 390 1780 470 {
+lab=ua[1]}
+N 1580 470 1780 470 {
+lab=ua[1]}
 C {devices/ipin.sym} 290 200 0 0 {name=p1 lab=ui_in[7:0]}
 C {devices/opin.sym} 590 260 0 0 {name=p2 lab=uo_out[7:0]}
 C {devices/iopin.sym} 590 220 2 1 {name=p3 lab=VGND}
@@ -94,7 +96,6 @@ C {devices/lab_wire.sym} 970 360 0 0 {name=p17 sig_type=std_logic lab=VDPWR}
 C {devices/lab_wire.sym} 970 160 0 0 {name=p18 sig_type=std_logic lab=VDPWR}
 C {devices/lab_wire.sym} 1070 160 0 0 {name=p19 sig_type=std_logic lab=VAPWR}
 C {devices/lab_wire.sym} 1520 370 0 1 {name=p20 sig_type=std_logic lab=VAPWR}
-C {devices/lab_wire.sym} 1580 470 0 1 {name=p21 sig_type=std_logic lab=VGND}
 C {bus_connect.sym} 1380 130 0 0 {name=l2 lab=D[0]}
 C {bus_connect.sym} 1380 150 0 0 {name=l4 lab=D[1]}
 C {bus_connect.sym} 1380 170 0 0 {name=l5 lab=D[2]}
@@ -105,7 +106,7 @@ C {bus_connect.sym} 1380 250 0 0 {name=l9 lab=D[6]}
 C {bus_connect.sym} 1380 270 0 0 {name=l10 lab=D[7]}
 C {devices/lab_wire.sym} 1290 220 0 1 {name=p22 sig_type=std_logic lab=D[7:0]}
 C {devices/lab_wire.sym} 230 100 0 1 {name=p23 sig_type=std_logic lab=VAPWR}
-C {lab_wire.sym} 1290 410 0 0 {name=p24 sig_type=std_logic lab=ua[0]}
+C {lab_wire.sym} 1580 390 0 1 {name=p24 sig_type=std_logic lab=ua[0]}
 C {lab_wire.sym} 1780 320 0 0 {name=p25 sig_type=std_logic lab=ua[1]}
 C {lab_wire.sym} 1790 600 0 0 {name=p26 sig_type=std_logic lab=ua[7:2]}
 C {lab_wire.sym} 1780 710 0 0 {name=p27 sig_type=std_logic lab=ua[7:0]}
