@@ -20,7 +20,7 @@ paths:
   layout:           gds
   verilog:          verilog
   netlist:          netlist
-  documentation:    doc
+  documentation:    docs
 
 pins:
     VDPWR:

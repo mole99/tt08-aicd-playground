@@ -1,4 +1,4 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
+![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/cace/badge.svg)
 
 # AICD Playground
 
@@ -7,9 +7,12 @@ A mixed-signal test project for the analog IC design course at Graz University o
 > [!WARNING]  
 > 🚧 This repository is WIP. 🚧
 
-This repository is the top-level and integrates a digital 8-bit controller with some analog IPs such as up/down-levelshifters, an R2R-DAC and a comparator. The IPs are connected in a way that a simple SAR-ADC is formed.
+This repository is the top-level and integrates a digital 8-bit controller with several analog IPs such as up/down-levelshifters, an R2R-DAC and a comparator. The IPs are connected in a way that a simple SAR-ADC is formed.
 
 The dependencies are hosted in their own repositories and are linked as submodules under `dependencies/`.
+
+- [Documentation](docs/sky130_leo_ip__levelshifter_down/sky130_leo_ip__levelshifter_down.md)
+- [Characterization](docs/sky130_leo_ip__levelshifter_down/sky130_leo_ip__levelshifter_down_rcx.md)
 
 ## Clone the Repository
 
@@ -23,7 +26,7 @@ If you forgot to clone with submodules, you can run the following instead:
 
 ## Assemble the Top-Level
 
-The script `merge.py` uses the KLayout Python API to place all IPs inside the template.
+The script `merge.py` under `python/` uses the KLayout Python API to place all IPs inside the template. Magic is used to write the LEF file. Most of the wiring is done using this script, but still some parts are manually routed.
 
 ## Run Characterization
 
@@ -32,3 +35,9 @@ The script `merge.py` uses the KLayout Python API to place all IPs inside the te
 To run CACE, simply run:
 
 	cace
+
+## License
+
+Copyright 2024 Leo Moser
+
+Licensed under the Apache License, Version 2.0.
