@@ -10,3 +10,6 @@
 [submodule "dependencies/sky130_leo_ip__levelshifter"]
 	path = dependencies/sky130_leo_ip__levelshifter
 	url = https://github.com/mole99/sky130_leo_ip__levelshifter.git
+[submodule "dependencies/sky130_tug_ip__logo"]
+	path = dependencies/sky130_tug_ip__logo
+	url = https://github.com/mole99/sky130_tug_ip__logo.git
