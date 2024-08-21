@@ -11,8 +11,8 @@ This repository is the top-level and integrates a digital 8-bit controller with 
 
 The dependencies are hosted in their own repositories and are linked as submodules under `dependencies/`.
 
-- [Documentation](docs/sky130_leo_ip__levelshifter_down/sky130_leo_ip__levelshifter_down.md)
-- [Characterization](docs/sky130_leo_ip__levelshifter_down/sky130_leo_ip__levelshifter_down_rcx.md)
+- [Documentation](docs/tt_um_tt08_aicd_playground.md)
+- [Characterization](docs/tt_um_tt08_aicd_playground_layout.md)
 
 ## Clone the Repository
 
