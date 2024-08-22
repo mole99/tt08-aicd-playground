@@ -259,26 +259,27 @@ draw_stripe(144.34, 6.24, 'VGND')
 draw_stripe(315, 6.24, 'VAPWR')
 draw_stripe(315-2.8, 6.24, 'VGND')
 
-# Draw metal for analog pins
-for i in range(8):
-    box = db.DBox(0.0, 0.0, 0.9, 1.0).moved(0.93 + 19.32*i, 0)
-    top.shapes(layer_met4_drawing).insert(box)
-
 # --- Manual Routing ---
 
 # Get the manual routing
 ly_tmp = db.Layout()
 ly_tmp.read("../gds/manual_routing.gds")
 manual_routing = ly_tmp.cell('manual_routing')
+
+# TODO scale and snap converts paths to polygons
+# we make use of that to convert all paths
+# because the gds2gltf tool throws errors on paths
+ly_tmp.scale_and_snap(ly_tmp.top_cell(), 1, mult=1, div=1)
+
 manual_routing = copy_cell_to_layout(ly, manual_routing)
 
 # Insert the manual routing
 top.insert(db.DCellInstArray(manual_routing.cell_index(),
                                   db.DTrans(db.DTrans.R0, db.DPoint(0, 0))))
 
-# Convert PCells to static # TODO necessary?
-ctx = db.SaveLayoutOptions()
-ctx.write_context_info = False
+# Convert PCells to static
+#ctx = db.SaveLayoutOptions()
+#ctx.write_context_info = False
 
 # Flatten top cell one level
 #ly.top_cell().flatten(1, True)
@@ -292,7 +293,7 @@ if not os.path.exists('../lef/'):
     os.makedirs('../lef/')
 
 # Write the GDS
-ly.write(f"../gds/{top_module}.gds", ctx)
+ly.write(f"../gds/{top_module}.gds")#, ctx)
 
 # Generate the LEF file using magic
 
@@ -359,7 +360,6 @@ for label in [f'uio_in\\[{i}\\]' for i in range(8)]:
     magic_input += f'port {label} class input\n'
     magic_input += f'port {label} use signal\n'
 
-magic_input += f'property FIXED_BBOX "0 0 {319240//5} {225760//5}"\n'
 magic_input += f'lef write {lef_out} -hide -pinonly\n'
 
 with subprocess.Popen(
