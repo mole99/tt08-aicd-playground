@@ -310,6 +310,49 @@ rcfile = os.path.join(PDK_ROOT, PDK, 'libs.tech', 'magic', f'{PDK}.magicrc')
 magic_input = ''
 magic_input += f'gds read {gds_in}\n'
 magic_input += f'load {top_module}\n'
+magic_input += f'select top cell\n'# {top_module}\n'
+
+# Power
+
+for label in ['VGND', 'VDPWR', 'VAPWR']:
+    #magic_input += f'port {label} make\n'
+    magic_input += f'port {label} class inout\n'
+    magic_input += f'port {label} use power\n'
+
+# Analog
+
+for label in [f'ua\\[{i}\\]' for i in range(8)]:
+    magic_input += f'port {label} class inout\n'
+    magic_input += f'port {label} use signal\n'
+
+# Output
+
+for label in [f'uo_out\\[{i}\\]' for i in range(8)]:
+    magic_input += f'port {label} class output\n'
+    magic_input += f'port {label} use signal\n'
+
+for label in [f'uio_out\\[{i}\\]' for i in range(8)]:
+    magic_input += f'port {label} class output\n'
+    magic_input += f'port {label} use signal\n'
+
+for label in [f'uio_oe\\[{i}\\]' for i in range(8)]:
+    magic_input += f'port {label} class output\n'
+    magic_input += f'port {label} use signal\n'
+
+# Input
+
+for label in ['rst_n', 'ena', 'clk']:
+    magic_input += f'port {label} class input\n'
+    magic_input += f'port {label} use signal\n'
+
+for label in [f'ui_in\\[{i}\\]' for i in range(8)]:
+    magic_input += f'port {label} class input\n'
+    magic_input += f'port {label} use signal\n'
+
+for label in [f'uio_in\\[{i}\\]' for i in range(8)]:
+    magic_input += f'port {label} class input\n'
+    magic_input += f'port {label} use signal\n'
+
 magic_input += f'property FIXED_BBOX "0 0 {319240//5} {225760//5}"\n'
 magic_input += f'lef write {lef_out} -hide -pinonly\n'
 
