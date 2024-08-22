@@ -312,9 +312,15 @@ magic_input += f'gds read {gds_in}\n'
 magic_input += f'load {top_module}\n'
 magic_input += f'select top cell\n'# {top_module}\n'
 
+# Ground
+
+#magic_input += f'port {label} make\n'
+magic_input += f'port VGND class inout\n'
+magic_input += f'port VGND use ground\n'
+
 # Power
 
-for label in ['VGND', 'VDPWR', 'VAPWR']:
+for label in ['VDPWR', 'VAPWR']:
     #magic_input += f'port {label} make\n'
     magic_input += f'port {label} class inout\n'
     magic_input += f'port {label} use power\n'

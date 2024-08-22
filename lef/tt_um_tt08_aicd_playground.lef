@@ -29,7 +29,7 @@ MACRO tt_um_tt08_aicd_playground
   END VDPWR
   PIN VGND
     DIRECTION INOUT ;
-    USE POWER ;
+    USE GROUND ;
     PORT
       LAYER met4 ;
         RECT 184.000 6.240 185.600 221.625 ;
