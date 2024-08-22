@@ -266,6 +266,9 @@ ly_tmp = db.Layout()
 ly_tmp.read("../gds/manual_routing.gds")
 manual_routing = ly_tmp.cell('manual_routing')
 
+# Flatten manual routing
+ly_tmp.top_cell().flatten(-1, True)
+
 # TODO scale and snap converts paths to polygons
 # we make use of that to convert all paths
 # because the gds2gltf tool throws errors on paths
