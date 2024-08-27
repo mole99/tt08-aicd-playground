@@ -11,7 +11,7 @@ This repository is the top-level and integrates a digital 8-bit controller with 
 
 The dependencies are hosted in their own repositories and are linked as submodules under `dependencies/`.
 
-- [dig_ctrl]() - An 8-bit digital controller
+- [dig_ctrl](https://github.com/mole99/dig_ctrl) - An 8-bit digital controller
 - [sky130_leo_ip__comparator](https://github.com/mole99/sky130_leo_ip__comparator/) - A simple clocked comparator for 3.3V
 - [sky130_leo_ip__levelshifter](https://github.com/mole99/sky130_leo_ip__levelshifter) - Simple up-/down-levelshifter for 1.8V/3.3V
 - [sky130_leo_ip__rdac_8bit](https://github.com/mole99/sky130_leo_ip__rdac_8bit) - A simple 8-bit R2R-DAC
