@@ -68,6 +68,10 @@ logo_top = copy_cell_to_layout(ly, logo_top)
 top.insert(db.DCellInstArray(logo_top.cell_index(),
                                   db.DTrans(db.DTrans.R0, db.DPoint(210, 5))))
 
+# Insert the logo
+top.insert(db.DCellInstArray(logo_top.cell_index(),
+                                  db.DTrans(db.DTrans.R180, db.DPoint(305, 160))))
+
 # Get the RDAC
 ly_tmp = db.Layout()
 ly_tmp.read("../dependencies/sky130_leo_ip__rdac_8bit/gds/sky130_leo_ip__rdac_8bit.gds")

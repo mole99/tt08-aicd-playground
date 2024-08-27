@@ -259,7 +259,7 @@ text {font-family: Sans-Serif;}
 <text fill="#cccccc"  xml:space="preserve" font-size="5.64255" transform="translate(750.159, 348.681)" >out_p</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="5.64255" transform="translate(809.691, 381.234)" >in_n</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="5.64255" transform="translate(788.138, 392.085)" >vss</text>
-<text fill="#cccccc"  xml:space="preserve" font-size="5.64255" transform="translate(761.01, 392.085)" >clk_n</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="5.64255" transform="translate(761.01, 392.085)" >clk</text>
 <text fill="#cccccc"  xml:space="preserve" font-size="5.64255" transform="translate(750.159, 370.383)" >out_n</text>
 <path class="l4" d="M145.213 231.791L286.276 231.791"/>
 <path class="l4" d="M145.213 324.025L286.276 324.025"/>

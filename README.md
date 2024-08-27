@@ -4,15 +4,18 @@
 
 A mixed-signal test project for the analog IC design course at Graz University of Technology.
 
-> [!WARNING]  
-> 🚧 This repository is WIP. 🚧
-
 This repository is the top-level and integrates a digital 8-bit controller with several analog IPs such as up/down-levelshifters, an R2R-DAC and a comparator. The IPs are connected in a way that a simple SAR-ADC is formed.
-
-The dependencies are hosted in their own repositories and are linked as submodules under `dependencies/`.
 
 - [Documentation](docs/tt_um_tt08_aicd_playground.md)
 - [Characterization](docs/tt_um_tt08_aicd_playground_layout.md)
+
+The dependencies are hosted in their own repositories and are linked as submodules under `dependencies/`.
+
+- [dig_ctrl]() - An 8-bit digital controller
+- [sky130_leo_ip__comparator](https://github.com/mole99/sky130_leo_ip__comparator/) - A simple clocked comparator for 3.3V
+- [sky130_leo_ip__levelshifter](https://github.com/mole99/sky130_leo_ip__levelshifter) - Simple up-/down-levelshifter for 1.8V/3.3V
+- [sky130_leo_ip__rdac_8bit](https://github.com/mole99/sky130_leo_ip__rdac_8bit) - A simple 8-bit R2R-DAC
+- [sky130_tug_ip__logo](https://github.com/mole99/sky130_tug_ip__logo) - Logo for TU Graz
 
 ## Clone the Repository
 
