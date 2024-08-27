@@ -26,47 +26,39 @@
   + Type: ground
   + Direction: inout
 - clk
-  + Description: TODO
+  + Description: Clock input
   + Type: signal
   + Direction: input
 - ena
-  + Description: TODO
+  + Description: Enable pin (do not use)
   + Type: signal
   + Direction: input
 - rst_n
-  + Description: TODO
+  + Description: Active low reset signal
   + Type: signal
   + Direction: input
-- port_i[7:0]
-  + Description: TODO
-  + Type: signal
-  + Direction: input
-- port_o[7:0]
-  + Description: TODO
-  + Type: signal
-  + Direction: output
 - ui_in[7:0]
-  + Description: TODO
+  + Description: Input Pmod
   + Type: signal
   + Direction: input
 - uio_in[7:0]
-  + Description: TODO
+  + Description: Input for bidirectional pins
   + Type: signal
   + Direction: input
 - uio_oe[7:0]
-  + Description: TODO
+  + Description: Output enable for bidirectional pins
   + Type: signal
   + Direction: output
 - uio_out[7:0]
-  + Description: TODO
+  + Description: Output for bidirectional pins
   + Type: signal
   + Direction: output
 - uo_out[7:0]
-  + Description: TODO
+  + Description: Output Pmod
   + Type: signal
   + Direction: output
 - ua[7:0]
-  + Description: TODO
+  + Description: Analog pins
   + Type: signal
   + Direction: inout
 

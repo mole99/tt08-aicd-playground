@@ -36,47 +36,39 @@ pins:
         type: ground
         direction: inout
     clk:
-        description: TODO
+        description: Clock input
         type: signal
         direction: input
     ena:
-        description: TODO
+        description: Enable pin (do not use)
         type: signal
         direction: input
     rst_n:
-        description: TODO
+        description: Active low reset signal
         type: signal
         direction: input
-    port_i[7:0]:
-        description: TODO
-        type: signal
-        direction: input
-    port_o[7:0]:
-        description: TODO
-        type: signal
-        direction: output
     ui_in[7:0]:
-        description: TODO
+        description: Input Pmod
         type: signal
         direction: input
     uio_in[7:0]:
-        description: TODO
+        description: Input for bidirectional pins
         type: signal
         direction: input
     uio_oe[7:0]:
-        description: TODO
+        description: Output enable for bidirectional pins
         type: signal
         direction: output
     uio_out[7:0]:
-        description: TODO
+        description: Output for bidirectional pins
         type: signal
         direction: output
     uo_out[7:0]:
-        description: TODO
+        description: Output Pmod
         type: signal
         direction: output
     ua[7:0]:
-        description: TODO
+        description: Analog pins
         type: signal
         direction: inout
 
