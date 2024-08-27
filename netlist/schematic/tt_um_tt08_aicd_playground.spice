@@ -5,32 +5,32 @@
 + uio_oe[6] uio_oe[5] uio_oe[4] uio_oe[3] uio_oe[2] uio_oe[1] uio_oe[0] ua[7] ua[6] ua[5] ua[4] ua[3] ua[2] ua[1] ua[0]
 *.PININFO ui_in[7:0]:I uo_out[7:0]:O VGND:B VDPWR:B VAPWR:B uio_in[7:0]:I ua[7:0]:B uio_out[7:0]:O uio_oe[7:0]:O ena:I clk:I
 *+ rst_n:I
-x1 VDPWR VGND clk net2 ena port_ms_i port_ms_o[0] port_ms_o[1] port_ms_o[2] port_ms_o[3] port_ms_o[4] port_ms_o[5] port_ms_o[6]
+x1 VDPWR VGND clk clk_o ena port_ms_i port_ms_o[0] port_ms_o[1] port_ms_o[2] port_ms_o[3] port_ms_o[4] port_ms_o[5] port_ms_o[6]
 + port_ms_o[7] rst_n ui_in[0] ui_in[1] ui_in[2] ui_in[3] ui_in[4] ui_in[5] ui_in[6] ui_in[7] uio_in[0] uio_in[1] uio_in[2] uio_in[3] uio_in[4]
 + uio_in[5] uio_in[6] uio_in[7] uio_oe[0] uio_oe[1] uio_oe[2] uio_oe[3] uio_oe[4] uio_oe[5] uio_oe[6] uio_oe[7] uio_out[0] uio_out[1]
 + uio_out[2] uio_out[3] uio_out[4] uio_out[5] uio_out[6] uio_out[7] uo_out[0] uo_out[1] uo_out[2] uo_out[3] uo_out[4] uo_out[5] uo_out[6]
 + uo_out[7] dig_ctrl_top
 * noconn ua[7:2]
-* noconn #net3
-x2[7] VAPWR VDPWR port_ms_o_ana[7] port_ms_o[7] VGND sky130_leo_ip__levelshifter_up
-x2[6] VAPWR VDPWR port_ms_o_ana[6] port_ms_o[6] VGND sky130_leo_ip__levelshifter_up
-x2[5] VAPWR VDPWR port_ms_o_ana[5] port_ms_o[5] VGND sky130_leo_ip__levelshifter_up
-x2[4] VAPWR VDPWR port_ms_o_ana[4] port_ms_o[4] VGND sky130_leo_ip__levelshifter_up
-x2[3] VAPWR VDPWR port_ms_o_ana[3] port_ms_o[3] VGND sky130_leo_ip__levelshifter_up
-x2[2] VAPWR VDPWR port_ms_o_ana[2] port_ms_o[2] VGND sky130_leo_ip__levelshifter_up
-x2[1] VAPWR VDPWR port_ms_o_ana[1] port_ms_o[1] VGND sky130_leo_ip__levelshifter_up
-x2[0] VAPWR VDPWR port_ms_o_ana[0] port_ms_o[0] VGND sky130_leo_ip__levelshifter_up
-x3 VDPWR port_ms_i net1 VGND sky130_leo_ip__levelshifter_down
+* noconn #net1
+x2[7] VAPWR VDPWR port_ms_ana[7] port_ms_o[7] VGND sky130_leo_ip__levelshifter_up
+x2[6] VAPWR VDPWR port_ms_ana[6] port_ms_o[6] VGND sky130_leo_ip__levelshifter_up
+x2[5] VAPWR VDPWR port_ms_ana[5] port_ms_o[5] VGND sky130_leo_ip__levelshifter_up
+x2[4] VAPWR VDPWR port_ms_ana[4] port_ms_o[4] VGND sky130_leo_ip__levelshifter_up
+x2[3] VAPWR VDPWR port_ms_ana[3] port_ms_o[3] VGND sky130_leo_ip__levelshifter_up
+x2[2] VAPWR VDPWR port_ms_ana[2] port_ms_o[2] VGND sky130_leo_ip__levelshifter_up
+x2[1] VAPWR VDPWR port_ms_ana[1] port_ms_o[1] VGND sky130_leo_ip__levelshifter_up
+x2[0] VAPWR VDPWR port_ms_ana[0] port_ms_o[0] VGND sky130_leo_ip__levelshifter_up
+x3 VDPWR port_ms_i out_p VGND sky130_leo_ip__levelshifter_down
 x2 D[0] ua[1] D[1] D[2] D[3] D[4] D[5] D[6] D[7] VGND sky130_leo_ip__rdac_8bit
-x1[7] port_ms_o_ana[7] VGND VGND VAPWR VAPWR D[7] sky130_fd_sc_hvl__buf_4
-x1[6] port_ms_o_ana[6] VGND VGND VAPWR VAPWR D[6] sky130_fd_sc_hvl__buf_4
-x1[5] port_ms_o_ana[5] VGND VGND VAPWR VAPWR D[5] sky130_fd_sc_hvl__buf_4
-x1[4] port_ms_o_ana[4] VGND VGND VAPWR VAPWR D[4] sky130_fd_sc_hvl__buf_4
-x1[3] port_ms_o_ana[3] VGND VGND VAPWR VAPWR D[3] sky130_fd_sc_hvl__buf_4
-x1[2] port_ms_o_ana[2] VGND VGND VAPWR VAPWR D[2] sky130_fd_sc_hvl__buf_4
-x1[1] port_ms_o_ana[1] VGND VGND VAPWR VAPWR D[1] sky130_fd_sc_hvl__buf_4
-x1[0] port_ms_o_ana[0] VGND VGND VAPWR VAPWR D[0] sky130_fd_sc_hvl__buf_4
-x4 VAPWR ua[0] net1 ua[1] VGND net2 net3 sky130_leo_ip__comparator
+x1[7] port_ms_ana[7] VGND VGND VAPWR VAPWR D[7] sky130_fd_sc_hvl__buf_4
+x1[6] port_ms_ana[6] VGND VGND VAPWR VAPWR D[6] sky130_fd_sc_hvl__buf_4
+x1[5] port_ms_ana[5] VGND VGND VAPWR VAPWR D[5] sky130_fd_sc_hvl__buf_4
+x1[4] port_ms_ana[4] VGND VGND VAPWR VAPWR D[4] sky130_fd_sc_hvl__buf_4
+x1[3] port_ms_ana[3] VGND VGND VAPWR VAPWR D[3] sky130_fd_sc_hvl__buf_4
+x1[2] port_ms_ana[2] VGND VGND VAPWR VAPWR D[2] sky130_fd_sc_hvl__buf_4
+x1[1] port_ms_ana[1] VGND VGND VAPWR VAPWR D[1] sky130_fd_sc_hvl__buf_4
+x1[0] port_ms_ana[0] VGND VGND VAPWR VAPWR D[0] sky130_fd_sc_hvl__buf_4
+x4 VAPWR ua[0] out_p ua[1] VGND clk_o net1 sky130_leo_ip__comparator
 .ends
 
 * expanding   symbol:  dig_ctrl_top.sym # of pins=13
