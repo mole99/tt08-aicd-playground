@@ -37,7 +37,7 @@ The script `merge.py` under `python/` uses the KLayout Python API to place all I
 
 To run CACE, simply run:
 
-	cace
+	cace -s layout
 
 ## License
 
