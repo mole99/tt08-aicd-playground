@@ -1,15 +1,15 @@
 [submodule "dig_ctrl"]
-    path = dependencies/dig_ctrl
+	path = dependencies/dig_ctrl
 	url = ../dig_ctrl.git
 [submodule "sky130_leo_ip__rdac_8bit"]
-    path = dependencies/sky130_leo_ip__rdac_8bit
+	path = dependencies/sky130_leo_ip__rdac_8bit
 	url = ../sky130_leo_ip__rdac_8bit.git
 [submodule "sky130_leo_ip__comparator"]
-    path = dependencies/sky130_leo_ip__comparator
+	path = dependencies/sky130_leo_ip__comparator
 	url = ../sky130_leo_ip__comparator.git
 [submodule "sky130_leo_ip__levelshifter"]
-    path = dependencies/sky130_leo_ip__levelshifter
+	path = dependencies/sky130_leo_ip__levelshifter
 	url = ../sky130_leo_ip__levelshifter.git
 [submodule "sky130_tug_ip__logo"]
-    path = dependencies/sky130_tug_ip__logo
+	path = dependencies/sky130_tug_ip__logo
 	url = ../sky130_tug_ip__logo.git
